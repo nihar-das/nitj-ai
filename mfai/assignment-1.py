@@ -1,3 +1,8 @@
+"""
+[Assignment-1]: Find covariance matrix of 2x2 matrix
+"""
+
+
 def calc_mean(values):
     agg = 0
     for item in values:
