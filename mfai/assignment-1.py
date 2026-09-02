@@ -1,5 +1,5 @@
 """
-[Assignment-1]: Find covariance matrix of 2x2 matrix
+[Assignment-1]: Find covariance matrix of 2 variables
 """
 
 
