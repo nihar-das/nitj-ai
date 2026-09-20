@@ -1,3 +1,18 @@
+def take_inputs():
+    try:
+        nums = input("Enter space separated values:").strip()
+
+        if not nums:
+            return None
+
+        nums = [float(item) for item in nums.split()]
+
+    except ValueError:
+        return None
+
+    return nums
+
+
 def partition(nums, start, end):
     pivot = nums[end]
     i = start - 1
@@ -27,6 +42,18 @@ def quicksort(nums, start, end):
     quicksort(nums, correct_pos + 1, end)
 
 
-ip = [5, 2, 9, 1, 7, 6, 3]
-quicksort(ip, 0, len(ip) - 1)
-print(ip)
+def main():
+    nums = take_inputs()
+
+    if nums is None:
+        print("Invalid inputs")
+        return
+
+    end = len(nums) - 1
+
+    quicksort(nums, 0, end)
+    print(nums)
+
+
+if __name__ == "__main__":
+    main()

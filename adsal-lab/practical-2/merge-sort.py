@@ -34,15 +34,32 @@ def merge_sort(nums, start, end):
     return combine(left_list, right_list)
 
 
+def take_inputs():
+    try:
+        nums = input("Enter space separated values:").strip()
+
+        if not nums:
+            return None
+
+        nums = [float(item) for item in nums.split()]
+
+    except ValueError:
+        return None
+
+    return nums
+
+
 def main():
-    ip_str = input("Enter space separated values:")
-    if len(ip_str) == 0:
-        print([])
+    nums = take_inputs()
+
+    if nums is None:
+        print("Invalid inputs")
         return
 
-    ip = [float(item) for item in ip_str.split(" ")]
+    end = len(nums) - 1
 
-    print(f"Merge sort:{merge_sort(ip, 0, len(ip) - 1)}")
+    res = merge_sort(nums, 0, end)
+    print(res)
 
 
 if __name__ == "__main__":
